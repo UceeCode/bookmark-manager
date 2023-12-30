@@ -45,3 +45,16 @@
         return [];
     }
  }
+
+ //function to remove a bookmark
+ let removeBookmark = (index) => {
+
+    //getting existing bookmarks from local storage
+    let bookmark = getBookmark();
+
+    //removing bookmarks at specific index
+    bookmark.splice(index, 1);
+
+    //save updated bookmark to local storage
+    saveBookmark(bookmark);
+ }
