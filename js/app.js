@@ -21,3 +21,14 @@
  let saveBookmark = (bookmark) =>{
     localStorage.setItem('bookmark', JSON.stringify(bookmark));
  }
+
+ //function to get saved bookmarks from local storage
+ let getBookmark = () => {
+    const storedBookmark = localStorage.getItem('bookmark');
+
+    if (storedBookmark){
+        return JSON.parse(storedBookmark);
+    } else {
+        return [];
+    }
+ }
