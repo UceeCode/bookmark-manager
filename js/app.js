@@ -15,6 +15,19 @@
         alert('Please enter both title and url');
         return;
     }
+
+    //this get existing bookmarks from local storage
+    let bookmark = getBookmark();
+
+    //adding a new bookmark
+    bookmark.push({ title, url });
+
+    //save bookmarks to local storage
+    saveBookmark(bookmark);
+
+    //clear input 
+    titleInput.value = '';
+    urlInput.value= '';
  }
 
  //function to save bookmarks to local storage
