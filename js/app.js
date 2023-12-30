@@ -58,3 +58,25 @@
     //save updated bookmark to local storage
     saveBookmark(bookmark);
  }
+
+ //update display function
+ let updateDisplay = () => {
+    let bookmarkContainer = document.getElementById('bookmarkContainer');
+    bookmarkContainer.innerHTML = '';
+
+    //getting existing bookmarks from local storage
+    let bookmark = getBookmark();
+
+    //displaying each bookmark
+    bookmark.forEach((bookmark, index) => {
+        let bookmarkDiv = document.createElement('div');
+        bookmarkDiv.classList.add('bookmark');
+        bookmarkDiv.innerHTML = `
+        <h2>${bookmark.title}</h2>
+        <div><a href= "${bookmark.url}" target="_blank">Visit Website</a>
+        <button onclick="removeBookmark(${index})">Delete</button>
+        </div>
+        `;
+        bookmarkContainer.appendChild(bookmarkDiv);
+    });
+ }
