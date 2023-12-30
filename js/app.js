@@ -28,6 +28,8 @@
     //clear input 
     titleInput.value = '';
     urlInput.value= '';
+
+    updateDisplay();
  }
 
  //function to save bookmarks to local storage
@@ -57,6 +59,8 @@
 
     //save updated bookmark to local storage
     saveBookmark(bookmark);
+
+    updateDisplay()
  }
 
  //update display function
@@ -79,4 +83,9 @@
         `;
         bookmarkContainer.appendChild(bookmarkDiv);
     });
+ }
+
+ //load bookmarks function
+ let loadBookmark = () => {
+    updateDisplay();
  }
