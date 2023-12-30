@@ -16,3 +16,8 @@
         return;
     }
  }
+
+ //function to save bookmarks to local storage
+ let saveBookmark = (bookmark) =>{
+    localStorage.setItem('bookmark', JSON.stringify(bookmark));
+ }
