@@ -76,8 +76,9 @@
         let bookmarkDiv = document.createElement('div');
         bookmarkDiv.classList.add('bookmark');
         bookmarkDiv.innerHTML = `
+        <div class="Content">
         <h2>${bookmark.title}</h2>
-        <div><a href= "${bookmark.url}" target="_blank">Visit Website</a>
+        <div><a href= "${bookmark.url}" target="_blank">Visit Website</a></div>
         <button onclick="removeBookmark(${index})">Delete</button>
         </div>
         `;
